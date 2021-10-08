@@ -25,7 +25,7 @@ public class EmpleadoService {
      * Web service operation
      */
     @WebMethod(operationName = "guardarEmpleado")
-    public boolean guardarDepartamento(@WebParam(name = "pojo") Empleado pojo) {
+    public boolean guardarEmpleado(@WebParam(name = "pojo") Empleado pojo) {
         //TODO write your implementation code here:
         return empleadoService.insert(pojo);
     }
@@ -34,7 +34,7 @@ public class EmpleadoService {
      * Web service operation
      */
     @WebMethod(operationName = "actualizarEmpleado")
-    public boolean actualizarDepartamento(@WebParam(name = "pojo") Empleado pojo) {
+    public boolean actualizarEmpleado(@WebParam(name = "pojo") Empleado pojo) {
         //TODO write your implementation code here:
         return empleadoService.update(pojo);
     }
@@ -43,7 +43,7 @@ public class EmpleadoService {
      * Web service operation
      */
     @WebMethod(operationName = "eliminarEmpleado")
-    public boolean eliminar(@WebParam(name = "id") long id) {
+    public boolean eliminarEmpleado(@WebParam(name = "id") long id) {
         //TODO write your implementation code here:
         return empleadoService.delete(id);
     }
@@ -52,7 +52,7 @@ public class EmpleadoService {
      * Web service operation
      */
     @WebMethod(operationName = "mostrarUnEmpleado")
-    public Empleado mostrarUnDepartamento(@WebParam(name = "id") long id) {
+    public Empleado mostrarUnEmpleado(@WebParam(name = "id") long id) {
         //TODO write your implementation code here:
         return empleadoService.searchById(id);
     }
@@ -61,7 +61,7 @@ public class EmpleadoService {
      * Web service operation
      */
     @WebMethod(operationName = "mostrarTodosEmpleados")
-    public List<Empleado> mostrarTodosDeprtamentos() {
+    public List<Empleado> mostrarTodosEmpleados() {
         //TODO write your implementation code here:
         return empleadoService.showAll();
     }

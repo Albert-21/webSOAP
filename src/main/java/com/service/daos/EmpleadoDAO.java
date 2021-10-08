@@ -79,7 +79,7 @@ public class EmpleadoDAO implements IDAO<Empleado>{
         Empleado empl = null;
         try {
             session = sessionFactory.openSession();
-            empl = (Empleado) session.createQuery("SELECT EMPL FROM Empleado empl WHERE id= " + id).uniqueResult();
+            empl = (Empleado) session.createQuery("SELECT empl FROM Empleado empl WHERE id= " + id).uniqueResult();
         } catch (HibernateException ex) {
             Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -90,19 +90,18 @@ public class EmpleadoDAO implements IDAO<Empleado>{
 
     @Override
     public List<Empleado> showAll() {
-        Session session = null;
-        List<Empleado> empleado = null;
+         Session session = null;
+        List<Empleado> empleados = null;
         try {
             session = sessionFactory.openSession();
-            Query query = session.createQuery("SELECT EMPL FROM Empleado empl");
-            empleado = query.list();
+            Query query = session.createQuery("SELECT empl FROM Empleado empl");
+            empleados = query.list();
 
         } catch (HibernateException ex) {
             Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return empleado;
-
+        return empleados;
     }
 
     @Override
